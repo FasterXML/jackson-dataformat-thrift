@@ -6,10 +6,14 @@ public class ThriftSchema implements FormatSchema
 {
     public final static String FORMAT_NAME = "thrift";
 
-    protected ThriftSchema() { }
+    protected final NativeThriftSchema _rawSchema;
     
-    public static ThriftSchema construct() {
-        return new ThriftSchema();
+    protected ThriftSchema(NativeThriftSchema raw) {
+        _rawSchema = raw;
+    }
+    
+    public static ThriftSchema construct(NativeThriftSchema rawSchema) {
+        return new ThriftSchema(rawSchema);
     }
     
     @Override

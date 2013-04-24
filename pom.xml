@@ -61,13 +61,18 @@ abstractions.
       <artifactId>jackson-databind</artifactId>
       <version>${jackson.core.version}</version>
     </dependency>
-<!--
+    <!--  And Thrift IDL parser from Facebook Swift library -->
     <dependency>
-      <groupId>com.dyuproject.protostuff</groupId>
-      <artifactId>protostuff-parser</artifactId>
-      <version>1.0.7</version>
+      <groupId>com.facebook.swift</groupId>
+      <artifactId>swift-idl-parser</artifactId>
+      <version>0.6.0</version>
     </dependency>
--->
+    <!-- Ugh. Which requires Guava... which is bloated gip... just for embellishments -->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>13.0.1</version>
+    </dependency>
 
      <!-- and for testing, JUnit is needed; as well as annotations -->
     <dependency>
