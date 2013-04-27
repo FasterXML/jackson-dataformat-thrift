@@ -21,6 +21,33 @@ public class ThriftFactory extends JsonFactory
     public ThriftFactory(ObjectCodec codec) {
         super(codec);
     }
+    protected ThriftFactory(ThriftFactory src, ObjectCodec oc)
+    {
+        super(src, oc);
+    }
+
+    @Override
+    public ThriftFactory copy()
+    {
+        _checkInvalidCopy(ThriftFactory.class);
+        return new ThriftFactory(this, null);
+    }
+
+    /*
+    /**********************************************************
+    /* Serializable overrides
+    /**********************************************************
+     */
+
+    /**
+     * Method that we need to override to actually make restoration go
+     * through constructors etc.
+     * Also: must be overridden by sub-classes as well.
+     */
+    @Override
+    protected Object readResolve() {
+        return new ThriftFactory(this, _objectCodec);
+    }
 
     /*                                                                                       
     /**********************************************************                              
