@@ -19,12 +19,13 @@
   <parent>
     <groupId>com.fasterxml</groupId>
     <artifactId>oss-parent</artifactId>
-    <version>10</version>
+    <version>11</version>
   </parent>
   <groupId>com.fasterxml.jackson.dataformat</groupId>
   <artifactId>jackson-dataformat-thrift</artifactId>
   <name>Jackson-dataformat-thrift</name>
   <version>2.2.1-SNAPSHOT</version>
+  <packaging>bundle</packaging>
   <description>Support for reading and writing thrift-encoded data via Jackson
 abstractions.
   </description>
